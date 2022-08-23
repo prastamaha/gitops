@@ -1,0 +1,13 @@
+echo-server:
+  replicaCount: 1
+
+  ingress:
+    enabled: true
+    ingressClassName: "nginx"
+    hosts:
+      - host: echo.prastamaha.internal
+        paths:
+          - /
+    tls:
+    - hosts:
+      - echo.prastamaha.internal
