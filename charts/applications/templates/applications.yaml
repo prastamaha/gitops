@@ -1,0 +1,22 @@
+{{- range .Values.applications }}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ .name }}
+spec:
+  destination:
+    namespace: {{ .namespace }}
+    server: https://kubernetes.default.svc
+  project: {{ .project | default "default" }}
+  source:
+    path: "charts/{{ .name }}"
+    repoURL: {{ .repository | default $.Values.repository }}
+    targetRevision: {{ .revision | default "HEAD" }}
+    helm:
+      valueFiles:
+        - "../../values/{{ .name }}/values.yaml"
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+{{- end }}

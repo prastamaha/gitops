@@ -1,0 +1,12 @@
+repository: null
+environment: null
+
+projects: []
+  # - name: demo
+  #   description: demo project
+
+applications: []
+  # - name: echo-server
+  #   namespace: echo-server    # namespace will automatically created if not exists
+  #   project: demo
+  #   revision: HEAD
