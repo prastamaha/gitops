@@ -3,7 +3,7 @@ echo-server:
 
   ingress:
     enabled: true
-    ingressClassName: "nginx"
+    ingressClassName: "kong"
     hosts:
       - host: echo.prastamaha.com
         paths:
