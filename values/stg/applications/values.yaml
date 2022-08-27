@@ -1,4 +1,5 @@
 repository: https://github.com/prastamaha/gitops
+environment: stg
 
 projects:
    - name: demo

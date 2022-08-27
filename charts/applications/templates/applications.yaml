@@ -15,7 +15,7 @@ spec:
     targetRevision: {{ .revision | default "HEAD" }}
     helm:
       valueFiles:
-        - "../../values/{{ .name }}/values.yaml"
+        - "../../values/{{ .name }}/{{ $.Values.environment }}/values.yaml"
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
