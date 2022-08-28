@@ -59,7 +59,7 @@ spec:
   source:
     helm:
       valueFiles:
-      - ../../values/applications/$ARGOCD_ENV/values.yaml
+      - ../../values/$ARGOCD_ENV/applications/values.yaml
     path: charts/applications
     repoURL: https://github.com/prastamaha/gitops
     targetRevision: HEAD
